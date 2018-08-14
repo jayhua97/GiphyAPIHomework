@@ -3,8 +3,9 @@ body {
 
 p {
     color: white;
-    /* width: 5px; */
+    /* width: 20%; */
     position: relative;
+    margin: 0 auto;
 }
 .topic {
     margin: 5px;

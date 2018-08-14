@@ -5,7 +5,9 @@ $(document).on("click",".topic", function() {
     event.preventDefault();
     var topic = ($(this).attr("data-name")) ;
     var apiKey = "vh7aVQK5fbGTKZONe6lqziwXU70heo63";
-    var queryURL = "https://api.giphy.com/v1/gifs/search?q=${'random'}" + topic + "&api_key=" + apiKey + "&limit=10";
+    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + topic + "&api_key=" + apiKey + "&limit=10";
+    // var queryURL = "https://api.giphy.com/v1/gifs/random?&api_key=" + apiKey + "&tag=" + topic;
+
     $.ajax({
 
         url: queryURL,
@@ -15,17 +17,19 @@ $(document).on("click",".topic", function() {
         console.log(response);
         for (var i = 0; i < topics.length; i++) {
         $("#gifs-go-here").append("<div id='gifs'>");
-        // $("#gifs-go-here").append("<div id='gifCount-" + gifCounter + "'>")
-        // $("#gifCount").append("<div id='gifs'>");
-        var results = response.data;
-        var topicImage = $("<img>");
-        topicImage.attr("src", results[i].images.fixed_height_still.url)
-        topicImage.attr("data-animate", results[i].images.fixed_height.url)
-        topicImage.attr("data-still", results[i].images.fixed_height_still.url)
-        topicImage.attr("data-state", "still");
-        topicImage.addClass("gif");
-        $("#gifs").append(topicImage);
-        $("#gifs").append("<p> Rating: " + results[0].rating + "</p>");
+            // $("#gifs-go-here").append("<div id='gifCount-" + gifCounter + "'>")
+            // $("#gifCount").append("<div id='gifs'>");
+            var results = response.data;
+            var topicImage = $("<img>");
+            topicImage.attr("src", results[i].images.fixed_height_still.url)
+            topicImage.attr("data-animate", results[i].images.fixed_height.url)
+            topicImage.attr("data-still", results[i].images.fixed_height_still.url)
+            topicImage.attr("data-state", "still");
+            topicImage.addClass("gif");
+            $("#gifs").append(topicImage);
+            $("#gifs").append("<p> Rating: " + results[0].rating + "</p>");
+
+        }
         $(".gif").on("click", function() {
             var state = $(this).attr("data-state");
             if (state === "still") {
@@ -37,7 +41,7 @@ $(document).on("click",".topic", function() {
                 $(this).attr("data-state", "still");
             }
         })
-        }
+        
       });
     gifCounter++;
 })
@@ -53,7 +57,6 @@ function renderButton() {
         topicButton.attr("data-name", topics[i]);
         topicButton.text(topics[i])
         $("#buttonList").append(topicButton);
-        console.log("hello")
     }
 }
 
