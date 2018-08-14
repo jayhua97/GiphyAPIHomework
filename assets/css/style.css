@@ -1,19 +1,45 @@
 body {
-    background-color: #DFDCE3;
-}
+    background-color: #777777;}
 
+p {
+    color: white;
+    /* width: 5px; */
+    position: relative;
+}
 .topic {
     margin: 5px;
+}
+
+#butonList {
+    position: absolute;
+}
+
+.container {
+    margin: 0 auto;
+    width: 100%;
 }
 
 .jumbotron {
     /* padding-top: 60px;
     padding-bottom: 60px; */
-    background-color: #4ABDAC;
+    position: relative;
+    background-color: #000000;
     margin:0 auto;
     text-align: left;
-    width: 90%;
-    margin-bottom: 100px;
+    width: 98%;
+    margin-bottom: 20px;
+}
+
+#createButton {
+    margin-bottom: 10px;
+}
+
+#add-gif {
+    margin-left: 10px;
+}
+
+#movie-form {
+    margin: 0 auto;
 }
 
 #jumbo-header {

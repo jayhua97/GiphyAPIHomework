@@ -12,23 +12,26 @@
 </head>
 
 <body>
-    <div class="jumbotron" id="jumbo-header">
-        <div id="buttonList">
+    <div class="jumbotron row" id="jumbo-header">
+        <div id="createButton" class = "col-md-12">
+                <form class="form-group row" id="movie-form">
+                    <input type="text" class="form-control col-md-11" id="gif-input" placeholder="Add a Gif!"><br>
+                    <input id="add-gif" class="btn" type="submit" value="Add a Gif">
+                </form>
+        </div>
+        <div id="buttonList" class="col-md-12">
 
         </div>
     </div>
 
-    <div class="jumbotron" id="jumbo-body">
-    <div id="createButton">
-        <form id="movie-form">
-            <label for="gif-input">Add a Gif</label>
-            <input type="text" id="gif-input"><br>
-            <input id="add-gif" type="submit" value="Add a Gif">
-        </form>
-    </div>
-    <div id="gifs-go-here">
+    <!-- <div class="container"> -->
+        <div class="jumbotron row" id="jumbo-body">
+            <div id="gifs-go-here" class="col-md-12">
 
-    </div>
+            </div>
+
+
+        <!-- </div> -->
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type ="text/javascript" src="assets/javascript/api.js"></script>
